@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 로딩후 바로 호출
+      $(document).ready(function () {
+        $.ajax({
+          type: 'GET',
+          url: 'http://spartacodingclub.shop/sparta_api/weather/seoul',
+          data: {},
+          success: function (response) {
+            $('#temp').text(response['temp']);
+          },
+        });
+      }); // 여기에
+    </script>
+
+    <title>초미니홈피 - 팬명록</title>
+    <style>
+      * {
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+
+      .mytitle {
+        height: 250px;
+        width: 100%;
+
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(data:image/jpeg;base64,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);
+        background-position: center;
+        background-size: cover;
+
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mybox {
+        max-width: 500px;
+        width: 95%;
+
+        margin: 20px auto 0 auto;
+
+        box-shadow: 0px 0px 3px 0px gray;
+        padding: 20px;
+      }
+
+      .mybtn {
+        margin-top: 10px;
+      }
+
+      .card {
+        max-width: 500px;
+        width: 95%;
+
+        margin: 10px auto 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="mytitle">
+      <h1>아이유 팬명록</h1>
+      <p>현재기온 : <span id="temp">00.0</span>도</p>
+    </div>
+    <div class="mybox">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">닉네임</label>
+      </div>
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea2">응원댓글</label>
+      </div>
+
+      <div class="mybtn">
+        <button type="button" class="btn btn-dark">응원 남기기</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>새로운 앨범 너무 멋져요!</p>
+          <footer class="blockquote-footer">호빵맨</footer>
+        </blockquote>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>새로운 앨범 너무 멋져요!</p>
+          <footer class="blockquote-footer">호빵맨</footer>
+        </blockquote>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>새로운 앨범 너무 멋져요!</p>
+          <footer class="blockquote-footer">호빵맨</footer>
+        </blockquote>
+      </div>
+    </div>
+  </body>
+</html>
